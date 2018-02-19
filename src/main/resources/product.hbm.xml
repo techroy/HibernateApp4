@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+
+	<class name="com.hibernateapp4.model.Product" table="Product">
+
+		<id name="pid" />
+		<property name="ProductName" />
+
+
+
+		<union-subclass name="com.hibernateapp4.model.Pen"
+			table="Pen">
+			<property name="color" />
+
+		</union-subclass>
+
+		<union-subclass name="com.hibernateapp4.model.Laptop"
+			table="Laptop">
+
+			<property name="price" />
+
+		</union-subclass>
+
+
+	</class>
+
+
+
+
+
+</hibernate-mapping>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<!-- <class name="com.hibernateapp4.model.Customer" table="Customer" discriminator-value="customer"> 
+		<id name="id" column="cid" /> <discriminator column="customer_type" length="10" 
+		type="string"/> <property name="name" column="cname"/> <subclass name="com.hibernateapp4.model.RegularCustomer" 
+		discriminator-value="regular"> <property name="address" /> </subclass> <subclass 
+		name="com.hibernateapp4.model.CorporateCustomer" discriminator-value="corporate"> 
+		<property name="organizationName" column="org_name"/> <property name="salary"/> 
+		</subclass> </class> -->
+
+	<class name="com.hibernateapp4.model.Customer" table="Customer">
+
+		<id name="id" column="cid" />
+		<property name="name" column="cname" />
+
+		<joined-subclass name="com.hibernateapp4.model.RegularCustomer"
+			table="Regular">
+
+			<key column="reg_id" />
+			<property name="address" />
+
+		</joined-subclass>
+
+		<joined-subclass name="com.hibernateapp4.model.CorporateCustomer"
+			table="Corporate">
+
+			<key column="cor_id" />
+			<property name="organizationName" column="org_name" />
+			<property name="salary" />
+
+		</joined-subclass>
+	</class>
+
+
+
+
+
+</hibernate-mapping>

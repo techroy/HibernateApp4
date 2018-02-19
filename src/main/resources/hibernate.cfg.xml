@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Test</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">ram</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		<property name="hibernate.connection.pool_size">10</property>
+
+		<!-- <mapping resource="customer.hbm.xml"></mapping> -->
+		
+		<!-- <mapping resource="product.hbm.xml"></mapping> -->
+		
+		<!-- <mapping class="com.hibernateapp4.model.Customer" />
+		<mapping class="com.hibernateapp4.model.CorporateCustomer" />
+		<mapping class="com.hibernateapp4.model.RegularCustomer" />
+		
+ -->
+ 
+ 		<mapping class="com.hibernateapp4.model.Product" />
+		<mapping class="com.hibernateapp4.model.Pen" />
+		<mapping class="com.hibernateapp4.model.Laptop" />
+		<mapping class="com.hibernateapp4.model.StudentBean" />
+		<mapping class="com.hibernateapp4.model.AddressBean" />
+		<mapping class="com.hibernateapp4.model.PhoneBean" />
+		<mapping class="com.hibernateapp4.model.UserBean" />
+		<mapping class="com.hibernateapp4.model.GroupBean" />
+		<mapping class="com.hibernateapp4.model.UserGroupBean" />
+
+	</session-factory>
+</hibernate-configuration>
